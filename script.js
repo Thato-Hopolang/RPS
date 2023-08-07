@@ -1,71 +1,65 @@
-const title = document.getElementById("title");
+const computerSlectionDisplay = document.getElementById("computerSlectionDisplay");
+const userSelectionDisplay = document.getElementById("userSelectionDisplay");
+const resultsDisplay = document.getElementById("resultsDisplay");
+const availableChoices = document.querySelectorAll("availableChoices");
 
-const stats = document.getElementById("stats");
-const livesLeft = document.getElementById("livesLeft");
-const currentWins = document.getElementById("currentWins");
-const requiredWins = document.getElementById("requiredWins");
+let playerChoice;
+let playerScore;
+let computerScore;
 
-const storyTeller = document.getElementById("storyTeller");
-const story = document.getElementById("story");
-
-const buttonsHolder = document.getElementById("buttonsHolder");
-const intialBtn = document.getElementById("intialBtn");
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-
-const gameBtn = document.getElementById("gameBtn");
-const rockBtn = document.getElementById("rockBtn");
-const paperBtn = document.getElementById("paperBtn");
-const scissorsBtn = document.getElementById("scissorsBtn");
-
-//document.getElementById("buttons").hidden = true;
-
-function computersChoice() {
-    let x = Math.floor(Math.random() * 3);
-    if (x == 0) {
-        return "Rock"
-    } else if (x == 1) {
-        return "Paper"
-    } else {
-        return "Scissors"
-    }
-}
-
-//function playerChoice() {};
-
-let playerChoice = "Rock"
+availableChoices.forEach(possibleChoice => possibleChoice.addEventListener("click", (e) => {
+    playerChoice = e.target.id;
+    userSelectionDisplay.innerHTML = playerChoice;
+    playRound()
+    computerChoice()
+    concludeGame()
+}));
 
 function playRound() {
-    if (playerChoice == computersChoice) {
-        return "It's a draw"
+    if (computerChoice == playerChoice) {
+        return "Draw!" // computerScore + 1, playerScore + 1,
+    } 
+    if (playerChoice == "Rock" && computerChoice == "Scissors") {
+        return "You win!" // playerScore + 1;
     }
-    else {
-        if (playerChoice == "Rock") {
-            if (computersChoice == "Scissors") {
-                return "You Win!"
-            }
-            else if(computersChoice == "Paper") {
-                return "You lose"
-            }
-        }
-        else if (playerChoice == "Paper") {
-            if (computersChoice == "Rock") {
-                return "You Win!"
-            }
-            else if(computersChoice == "Scissors") {
-                return "You lose"
-            }
-        }
-        else if (playerChoice == "Scissors") {
-            if (computersChoice == "Paper") {
-                return "You Win!"
-            }
-            else if(computersChoice == "Scissors") {
-                return "You lose"
-            }
-        }
+    if (playerChoice == "Paper" && computerChoice == "Rock") {
+        return "You win!" // playerScore + 1;
+    }
+    if (playerChoice == "Scissors" && computerChoice == "Paper") {
+        return "You win!" // playerScore + 1;
+    }
+    if (computerChoice == "Rock" && playerChoice == "Scissors") {
+        return "You Lose!" // computerScore + 1;
+    }
+    if (computerChoice == "Paper" && playerChoice == "Rock") {
+        return "You Lose!" // computerScore + 1;
+    }
+    if (computerChoice == "Scissors" && playerChoice == "Paper") {
+        return "You Lose!" // computerScore + 1;
     }
 };
 
-console.log(computersChoice())
-console.log(playRound())
+function computerChoice () {
+    let x = Math.floor(Math.random() * 3)
+    if (x == 0) {
+        return "Rock"
+    }
+    if (x == 1) {
+        return "Paper"
+    }
+    if (x = 2) {
+        return "Scissors"
+    }
+};
+
+function concludeGame() {
+    if (playerScore == 5) {
+        return "You've won the game!"
+    } else if (computerScore == 5) {
+        return "You've lost the game!"
+    }
+
+    if (computerScore > 5 && playerScore > 5) {
+        playRound()
+    }
+};
