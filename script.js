@@ -1,13 +1,15 @@
 const computerSlectionDisplay = document.getElementById("computerSlectionDisplay");
 const userSelectionDisplay = document.getElementById("userSelectionDisplay");
 const resultsDisplay = document.getElementById("resultsDisplay");
-const availableChoices = document.querySelectorAll("availableChoices");
+const availableChoices = document.querySelectorAll("button");
 
-let playerChoice;
+let playerChoice = availableChoices;
 let playerScore;
 let computerScore;
 
-availableChoices.forEach(possibleChoice => possibleChoice.addEventListener("click", (e) => {
+console.log(userSelectionDisplay )
+
+availableChoices.forEach(availableChoice => availableChoice.addEventListener("click", (e) => {
     playerChoice = e.target.id;
     userSelectionDisplay.innerHTML = playerChoice;
     playRound()
@@ -19,23 +21,23 @@ function playRound() {
     if (computerChoice == playerChoice) {
         return "Draw!" // computerScore + 1, playerScore + 1,
     } 
-    if (playerChoice == "Rock" && computerChoice == "Scissors") {
-        return "You win!" // playerScore + 1;
+    if (playerChoice === "Rock" && computerChoice === "Scissors") {
+        playerScore + 1;
     }
-    if (playerChoice == "Paper" && computerChoice == "Rock") {
-        return "You win!" // playerScore + 1;
+    if (playerChoice === "Paper" && computerChoice === "Rock") {
+        playerScore + 1;
     }
-    if (playerChoice == "Scissors" && computerChoice == "Paper") {
-        return "You win!" // playerScore + 1;
+    if (playerChoice === "Scissors" && computerChoice === "Paper") {
+        playerScore + 1;
     }
-    if (computerChoice == "Rock" && playerChoice == "Scissors") {
-        return "You Lose!" // computerScore + 1;
+    if (computerChoice === "Rock" && playerChoice === "Scissors") {
+        computerScore + 1;
     }
-    if (computerChoice == "Paper" && playerChoice == "Rock") {
-        return "You Lose!" // computerScore + 1;
+    if (computerChoice === "Paper" && playerChoice == "Rock") {
+        computerScore + 1;
     }
-    if (computerChoice == "Scissors" && playerChoice == "Paper") {
-        return "You Lose!" // computerScore + 1;
+    if (computerChoice === "Scissors" && playerChoice === "Paper") {
+        computerScore + 1;
     }
 };
 

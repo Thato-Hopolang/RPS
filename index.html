@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="title">
+        <h1 id="heading" class="heading">Rock Paper Scissor</h1>
+    </div>
+
+    <div class="btn-choices">
+        <button name="btn" id="availableChoices" class="Rock">Rock</button>
+        <button name="btn" id="availableChoices" class="Paper">Paper</button>
+        <button name="btn" id="availableChoices" class="Scissors">Scissors</button>
+    </div>
+
+    <div class="selection">
+        <div class="computer">
+            <h3 id="computerSelectionDisplay" ></h3>
+        </div>
+
+        <div class="user">
+            <h3 id="userSelectionDisplay">I chose rock</h3>
+        </div>
+    </div>
+
+    <div class="results">
+        <h2 id="resultsDisplay">Who won?</h2>
+    </div>
     
 </body>
 </html>
