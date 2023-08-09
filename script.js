@@ -83,15 +83,4 @@ function getResult() {
         computerWinsDisplay.innerHTML = computerScore;
         roundsPlayedDisplay.innerHTML = roundsPlayed;
         playerWinsDisplay.innerHTML = playerScore;
-    }
-};
-
-
-function finale() {
-    document.querySelectorAll("button").hidden = true;
-    document.getElementById("computerChoice").hidden = true;
-    document.getElementById("computerWinsDisplay").hidden = true;
-    document.getElementById("playerChoice").hidden = true;
-    document.getElementById("PlayerWinsDisplay").hidden = true;
-    document.getElementById("roundsPlayedDisplay").hidden = true;
 };
