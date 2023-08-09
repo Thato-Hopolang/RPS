@@ -4,22 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <p>First to five wins</p>
+
+    <div class="container">    
+        
+        <div class="contained">
+
+        <div class="title-holder">
+            <h1 class="title" id="title">Rock, Paper, Sicssors</h1>
+        </div>
+
+        <div class="rules">
+            <p class="rule" id="ruleDisplay">** <b>First to five wins the game. Let's go</b>** </p>
+        </div>
     
-    <h2>Player Wins: <span id="playerWinsDisplay">0</span></h2>
-    <h2>Rounds Played: <span id="roundsPlayedDisplay">0</span></h2>
-    <h2>Computer Wins: <span id="computerWinsDisplay">0</span></h2>
+        <div class="display">
+            <h2 id="playerInfo">Player Wins: <span id="playerWinsDisplay">0</span></h2>
+            <h2 id="roundInfo">Rounds Played: <span id="roundsPlayedDisplay">0</span></h2>
+            <h2 id="computerInfo">Computer Wins: <span id="computerWinsDisplay">0</span></h2>
+        </div>
+    
+        <div class="choices">
+            <div class="computer-choice">
+                <h2 id="computerOptions">Computer Choice: <span id="computerChoice"></span></h2>
+            </div>
+            <div class="player-choice">
+                <h2 id="playerOptions">User Choice: <span id="playerChoice"></span></h2>
+            </div>
+        </div>
+    
+        <div class="options">
+            <div class="options-start">
+                <button id="Rock">Rock</button>
+                <button id="Paper">Paper</button>
+                <button id="Scissors">Scissors</button>
+            </div>
+    
+            <div class="options-end">
+                <a id="optionYes" href="#">Yes</a>
+                <a id="optionNo" href="#">No</a>
+            </div>
+        </div>
+    
+        <div class="results">
+            <h2><span id="resultDisplay"></span></h2>
+            <h2><span id="grandFinaleDisplay">Who won the tournament?</span></h2>
+        </div>
+    </div>
+</div>
 
-    <h2>Computer Choice: <span id="computerChoice"></span></h2>
-    <h2>User Choice: <span id="playerChoice"></span></h2>
 
-    <button id="Rock">Rock</button>
-    <button id="Paper">Paper</button>
-    <button id="Scissors">Scissors</button>
-
-    <h2>Result: <span id="resultDisplay"></span></h2>
 </body>
 </html>
