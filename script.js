@@ -129,8 +129,3 @@ function finale() {
 
 
 };
-
-
-function yes() {};
-
-function no() {};
