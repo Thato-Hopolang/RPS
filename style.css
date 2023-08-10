@@ -40,7 +40,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 220px;
+    padding-top: 150px;
 }
 
 .contained {
@@ -135,6 +135,16 @@ a {
 
 #optionYes {
     width: 60px;
+}
+
+.continue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#retryDisplay {
+    font-size: 30px;
 }
 
 #optionNo {

@@ -9,6 +9,7 @@ const possibleChoices = document.querySelectorAll("button");
 const playerWinsDisplay = document.getElementById("playerWinsDisplay");
 const computerWinsDisplay = document.getElementById("computerWinsDisplay");
 const roundsPlayedDisplay = document.getElementById("roundsPlayedDisplay");
+const retryDisplay = document.getElementById("retryDisplay");
 
 let law;
 let playerChoice;
@@ -22,8 +23,9 @@ let roundsPlayed = 0;
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener("click", (e) => {
     playerChoice = e.target.id
     userChoiceDisplay.innerHTML = playerChoice
-    getComputerChoice()
-    getResult()
+    getComputerChoice();
+    getResult();
+    document.getElementById("ruleDisplay").hidden = true;
 }));
 
 
@@ -31,12 +33,14 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener("click
 document.getElementById("grandFinaleDisplay").hidden = true;
 document.getElementById("optionYes").hidden = true;
 document.getElementById("optionNo").hidden = true;
+document.getElementById("retryDisplay").hidden = true;
 
 
 function theEnd() {
     document.getElementById("grandFinaleDisplay").hidden = false;
     document.getElementById("optionYes").hidden = false;
     document.getElementById("optionNo").hidden = false;
+    document.getElementById("ruleDisplay").hidden = false;
 }
 
 function getComputerChoice () {
@@ -54,7 +58,6 @@ function getComputerChoice () {
 
     computerChoiceDisplay.innerHTML = computerChoice;
 };
-
 
 function getResult() {
         if (computerChoice == playerChoice) {
@@ -96,11 +99,13 @@ function getResult() {
             law = "Would like to play again?"
             finale()
             theEnd()
+            document.getElementById("ruleDisplay").hidden = false;
         } else if (playerScore === 5) {
             final = "Player has won the tournament."
             law = "Would like to play again?"
             finale()
             theEnd()
+            document.getElementById("ruleDisplay").hidden = false;
         }
     
         resultDisplay.innerHTML = result;
@@ -126,6 +131,5 @@ function finale() {
     document.getElementById("computerOptions").hidden = true;
     document.getElementById("roundInfo").hidden = true;
     document.getElementById("resultDisplay").hidden = true;
-
-
+    document.getElementById("retryDisplay").hidden = false;
 };
