@@ -151,6 +151,14 @@ a {
     width: 60px;
 }
 
+#optionYesStart {
+    width: 60px;
+}
+
+#optionNoStart {
+    width: 60px;
+}
+
 .results {
     display: flex;
     justify-content: center;
