@@ -25,10 +25,9 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener("click
     userChoiceDisplay.innerHTML = playerChoice
     getComputerChoice();
     getResult();
-    document.getElementById("ruleDisplay").hidden = true;
+    law = "First to five wins, let's go!";
+    ruleDisplay.innerHTML = law;
 }));
-
-
 
 //At Start
 document.getElementById("grandFinaleDisplay").hidden = true;
@@ -79,19 +78,17 @@ function getResult () {
         computerScore = computerScore +1;
         roundsPlayed = roundsPlayed +1;
     }
-    
+
     if (computerScore === 5) {
         final = "Computer has won the tournament."
         law = "Would like to play again?"
         finale()
         theEnd()
-        document.getElementById("ruleDisplay").hidden = false;
     } else if (playerScore === 5) {
         final = "Player has won the tournament."
         law = "Would like to play again?"
         finale()
         theEnd()
-        document.getElementById("ruleDisplay").hidden = false;
     }
     
     resultDisplay.innerHTML = result;
@@ -101,63 +98,6 @@ function getResult () {
     grandFinaleDisplay.innerHTML = final;
     ruleDisplay.innerHTML = law;
 };
-
-/*function getResult() {
-        if (computerChoice === playerChoice) {
-            result = "Draw!";
-            roundsPlayed = roundsPlayed +1;
-        } 
-        if (playerChoice === "Rock" && computerChoice === "Scissors") {
-            result = "Player wins"
-            playerScore = playerScore +1;
-            roundsPlayed = roundsPlayed +1;
-        }
-        if (playerChoice === "Paper" && computerChoice === "Rock") {
-            result = "Player wins"
-            playerScore = playerScore +1;
-            roundsPlayed = roundsPlayed +1;
-        }
-        if (playerChoice === "Scissors" && computerChoice === "Paper") {
-            result = "Player wins"
-            playerScore = playerScore +1;
-            roundsPlayed = roundsPlayed +1;
-        }
-        if (computerChoice === "Rock" && playerChoice === "Scissors") {
-            result = "Computer wins"
-            computerScore = computerScore +1;
-            roundsPlayed = roundsPlayed +1;
-        }
-        if (computerChoice === "Paper" && playerChoice == "Rock") {
-            result = "Computer wins"
-            computerScore = computerScore +1;
-            roundsPlayed = roundsPlayed +1;
-        }
-        if (computerChoice === "Scissors" && playerChoice === "Paper") {
-            result = "Computer wins"
-            computerScore = computerScore +1;
-            roundsPlayed = roundsPlayed +1;
-        }
-        if (computerScore === 5) {
-            final = "Computer has won the tournament."
-            law = "Would like to play again?"
-            finale()
-            theEnd()
-            document.getElementById("ruleDisplay").hidden = false;
-        } else if (playerScore === 5) {
-            final = "Player has won the tournament."
-            law = "Would like to play again?"
-            finale()
-            theEnd()
-            document.getElementById("ruleDisplay").hidden = false;
-        }
-    
-        resultDisplay.innerHTML = result;
-        computerWinsDisplay.innerHTML = computerScore;
-        roundsPlayedDisplay.innerHTML = roundsPlayed;
-        playerWinsDisplay.innerHTML = playerScore;
-        grandFinaleDisplay.innerHTML = final;
-        ruleDisplay.innerHTML = law;
-}; */
 
 function finale() {
     document.getElementById("computerChoice").hidden = true;
@@ -184,3 +124,6 @@ function refresh() {
 function closeGame() {
     window.close()
 }
+
+optionYes.addEventListener ("click", refresh);
+optionNo.addEventListener ("click", closeGame);
